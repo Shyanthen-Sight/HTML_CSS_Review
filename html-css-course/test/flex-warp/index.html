@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Wrap 演示</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Flex Wrap 演示</h1>
+      <p>对比 <code>flex-wrap</code> 的三种取值，以及用换行实现的响应式卡片布局。</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>1. flex-wrap: nowrap（默认）</h2>
+        <p class="hint">不换行，超出时挤压子元素，可能溢出。</p>
+        <div class="demo-row nowrap">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+          <div class="box">6</div>
+          <div class="box">7</div>
+          <div class="box">8</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>2. flex-wrap: wrap</h2>
+        <p class="hint">放不下时换到下一行，从左到右、从上到下排列。</p>
+        <div class="demo-row wrap">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+          <div class="box">6</div>
+          <div class="box">7</div>
+          <div class="box">8</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>3. flex-wrap: wrap-reverse</h2>
+        <p class="hint">换行方向反转，第一行在底部。</p>
+        <div class="demo-row wrap-reverse">
+          <div class="box">1</div>
+          <div class="box">2</div>
+          <div class="box">3</div>
+          <div class="box">4</div>
+          <div class="box">5</div>
+          <div class="box">6</div>
+          <div class="box">7</div>
+          <div class="box">8</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>4. 响应式卡片网格</h2>
+        <p class="hint">每张卡片有最小宽度，屏幕变窄会自动换行，无需媒体查询。</p>
+        <div class="cards">
+          <article class="card">
+            <h3>卡片一</h3>
+            <p>使用 flex-basis 和 min-width 控制换行时机。</p>
+          </article>
+          <article class="card">
+            <h3>卡片二</h3>
+            <p>通过 gap 统一控制卡片之间的间距。</p>
+          </article>
+          <article class="card">
+            <h3>卡片三</h3>
+            <p>每行卡片数量会随容器宽度自动变化。</p>
+          </article>
+          <article class="card">
+            <h3>卡片四</h3>
+            <p>最后一行的项目不会被拉伸，除非使用 flex-grow。</p>
+          </article>
+          <article class="card">
+            <h3>卡片五</h3>
+            <p>配合 justify-content 可以控制每一行的对齐方式。</p>
+          </article>
+          <article class="card">
+            <h3>卡片六</h3>
+            <p>flex-wrap 是实现简单响应式布局的常用手段。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
